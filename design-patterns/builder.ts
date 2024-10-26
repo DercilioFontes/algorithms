@@ -35,7 +35,6 @@ class ProductBuilder {
   }
 }
 
-
 const builder = new ProductBuilder();
 builder.setName("Bread").setPrice(1);
 const product = builder.getProduct();

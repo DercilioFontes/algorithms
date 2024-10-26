@@ -28,17 +28,17 @@ console.log({ object1, object2, object3, object4 });
 
 console.assert(
   object1.instanceId === object2.instanceId,
-  "Wrong implementation"
+  "Wrong implementation",
 );
 console.assert(
   object1.instanceId === object3.instanceId,
-  "Wrong implementation"
+  "Wrong implementation",
 );
 console.assert(
   object1.instanceId === object4.instanceId,
-  "Wrong implementation"
+  "Wrong implementation",
 );
 console.assert(
   object4.instanceId === object3.instanceId,
-  "Wrong implementation"
+  "Wrong implementation",
 );

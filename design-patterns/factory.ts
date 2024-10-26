@@ -13,7 +13,7 @@ class Product {
 class Food extends Product {
   weight: number;
 
-  constructor(name: string, price: number, weight: number= 0) {
+  constructor(name: string, price: number, weight: number = 0) {
     super(name, price);
     this.weight = weight;
   }
@@ -29,20 +29,24 @@ class Drink extends Product {
 }
 
 class ProductFactory {
-  static createProduct(type: "food" | "drink" | undefined, name: string, price: number, qnt?: number): Product {
+  static createProduct(
+    type: "food" | "drink" | undefined,
+    name: string,
+    price: number,
+    qnt?: number,
+  ): Product {
     switch (type) {
       case "food":
         return new Food(name, price, qnt);
       case "drink":
         return new Drink(name, price, qnt);
       default:
-        return new Product(name, price,);
+        return new Product(name, price);
     }
-    
   }
 }
 
-const bread = ProductFactory.createProduct('food', 'Bread', 1, 100);
-console.assert(bread instanceof Food, 'Wrong implementation');
-console.assert(bread instanceof Product, 'Wrong implementation');
-console.assert(!(bread instanceof Drink), 'Wrong implementation');
+const bread = ProductFactory.createProduct("food", "Bread", 1, 100);
+console.assert(bread instanceof Food, "Wrong implementation");
+console.assert(bread instanceof Product, "Wrong implementation");
+console.assert(!(bread instanceof Drink), "Wrong implementation");
