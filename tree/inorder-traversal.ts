@@ -1,13 +1,13 @@
 import { TreeNode } from "./tree-node";
 
-const preorderDfs = (node: TreeNode | null) => {
+const inorderDfs = (node: TreeNode | null) => {
   if (!node) {
     return;
   }
 
+  inorderDfs(node.left);
   console.log(node.val);
-  preorderDfs(node.left);
-  preorderDfs(node.right);
+  inorderDfs(node.right);
   return;
 };
 
@@ -19,4 +19,4 @@ root.left.right.right = new TreeNode(6);
 root.right = new TreeNode(2);
 root.right.right = new TreeNode(5);
 
-preorderDfs(root);
+inorderDfs(root);
