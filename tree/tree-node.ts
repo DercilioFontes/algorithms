@@ -1,9 +1,9 @@
-export class TreeNode {
-  val: unknown;
-  left: TreeNode | null = null;
-  right: TreeNode | null = null;
+export class TreeNode<T = unknown> {
+  val: T;
+  left: TreeNode<T> | null = null;
+  right: TreeNode<T> | null = null;
 
-  constructor(val: unknown) {
+  constructor(val: T) {
     this.val = val;
   }
 }
