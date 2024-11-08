@@ -1,4 +1,4 @@
-import { TreeNode } from "./tree-node";
+import { TreeNode } from "../tree-node";
 
 const hasPathSum = (
   root: TreeNode<number> | null,

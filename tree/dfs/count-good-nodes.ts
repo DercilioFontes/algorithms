@@ -3,7 +3,7 @@
  * A node is good if the path between the root and the node has no nodes with a greater value.
  */
 
-import { TreeNode } from "./tree-node";
+import { TreeNode } from "../tree-node";
 
 const countGoodNodes = (root: TreeNode<number> | null): number => {
   const dfs = (node: TreeNode<number> | null, maxSoFar: number): number => {
