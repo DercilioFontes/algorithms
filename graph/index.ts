@@ -1,37 +1,37 @@
-class GraphNode {
-  value: any;
-  neighbors: GraphNode[];
+class GraphNode<T> {
+  value: T;
+  neighbors: GraphNode<T>[];
 
-  constructor(value: any) {
+  constructor(value: T) {
     this.value = value;
     this.neighbors = [];
   }
 
-  addNeighbor(node: GraphNode) {
+  addNeighbor(node: GraphNode<T>) {
     this.neighbors.push(node);
   }
 }
 
-class Graph {
-  nodes: GraphNode[];
+class Graph<T> {
+  nodes: GraphNode<T>[];
 
   constructor() {
     this.nodes = [];
   }
 
-  addNode(value: any) {
+  addNode(value: T) {
     this.nodes.push(new GraphNode(value));
   }
 
-  addEdge(source: GraphNode, destination: GraphNode) {
+  addEdge(source: GraphNode<T>, destination: GraphNode<T>) {
     source.addNeighbor(destination);
     destination.addNeighbor(source);
   }
 }
 
-const bfs = (startNode: GraphNode) => {
-  const visited: Set<GraphNode> = new Set();
-  const queue: GraphNode[] = [];
+const bfs = <T>(startNode: GraphNode<T>) => {
+  const visited: Set<GraphNode<T>> = new Set();
+  const queue: GraphNode<T>[] = [];
 
   visited.add(startNode);
   queue.push(startNode);
@@ -49,9 +49,9 @@ const bfs = (startNode: GraphNode) => {
   }
 };
 
-const dfs = (startNode: GraphNode) => {
-  const visited: Set<GraphNode> = new Set();
-  const stack: GraphNode[] = [];
+const dfs = <T>(startNode: GraphNode<T>) => {
+  const visited: Set<GraphNode<T>> = new Set();
+  const stack: GraphNode<T>[] = [];
 
   stack.push(startNode);
 
@@ -68,9 +68,9 @@ const dfs = (startNode: GraphNode) => {
 
 // Given a graph, find the shortest path between two nodes using BFS.
 
-const shortestPath = (graph: Graph, start: GraphNode, target: GraphNode) => {
-  const visited: Set<GraphNode> = new Set();
-  const queue: [GraphNode, GraphNode[]][] = [];
+const shortestPath = <T>(graph: Graph<T>, start: GraphNode<T>, target: GraphNode<T>) => {
+  const visited: Set<GraphNode<T>> = new Set();
+  const queue: [GraphNode<T>, GraphNode<T>[]][] = [];
 
   queue.push([start, [start]]);
 
